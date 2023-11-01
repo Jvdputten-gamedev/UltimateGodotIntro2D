@@ -1,0 +1,111 @@
+[gd_scene load_steps=15 format=3 uid="uid://bgolgm7baxgae"]
+
+[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_p6lw8"]
+[ext_resource type="PackedScene" uid="uid://gowtlfjakpg5" path="res://scenes/objects/gate.tscn" id="2_laxjt"]
+[ext_resource type="Texture2D" uid="uid://r2idm75fp17o" path="res://resources/graphics/ground/stones.png" id="2_opfqd"]
+[ext_resource type="PackedScene" uid="uid://bxugkos71a215" path="res://scenes/player/player.tscn" id="3_3i70v"]
+[ext_resource type="Texture2D" uid="uid://dxbj2tq7alrjd" path="res://resources/graphics/tilesets/outside_walls.png" id="3_js5hi"]
+[ext_resource type="Texture2D" uid="uid://bblnksjpj0bx6" path="res://resources/graphics/tilesets/soil.png" id="4_y3xpl"]
+[ext_resource type="Texture2D" uid="uid://fot4tyv6ki5t" path="res://resources/graphics/decals/dirt_patch.png" id="5_b75wb"]
+[ext_resource type="Texture2D" uid="uid://dab4yrv7ss5qk" path="res://resources/graphics/decals/moss/moss_2.png" id="6_fds0u"]
+[ext_resource type="Texture2D" uid="uid://b2v0yccpk8m76" path="res://resources/graphics/decals/moss/moss_4.png" id="7_88fc2"]
+[ext_resource type="PackedScene" uid="uid://duhlauo6gl2rs" path="res://scenes/objects/steam_vent.tscn" id="9_8e5gr"]
+[ext_resource type="PackedScene" uid="uid://dxjd5w03151dx" path="res://scenes/Houses/house.tscn" id="10_snho0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hmtnw"]
+resource_name = "walls"
+texture = ExtResource("3_js5hi")
+texture_region_size = Vector2i(390, 390)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gfp0r"]
+texture = ExtResource("4_y3xpl")
+texture_region_size = Vector2i(390, 390)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5g1mc"]
+tile_size = Vector2i(390, 390)
+sources/0 = SubResource("TileSetAtlasSource_hmtnw")
+sources/1 = SubResource("TileSetAtlasSource_gfp0r")
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_p6lw8")
+
+[node name="Ground" type="Node2D" parent="."]
+
+[node name="Soil" type="Sprite2D" parent="Ground"]
+texture_repeat = 2
+position = Vector2(496, 720)
+texture = ExtResource("2_opfqd")
+region_enabled = true
+region_rect = Rect2(-3509.32, -439.045, 12615.3, 5597.64)
+
+[node name="TileMap" type="TileMap" parent="Ground"]
+tile_set = SubResource("TileSet_5g1mc")
+format = 2
+layer_0/name = "Ground"
+layer_0/tile_data = PackedInt32Array(-9, 65537, 1, -8, 65537, 1, -7, 65537, 1, -6, 65537, 1, -5, 65537, 1, -4, 65537, 1, -65545, 65537, 0, -65544, 65537, 0, -65543, 65537, 0, -65542, 65537, 0, -65541, 65537, 0, -65540, 65537, 0, -3, 131073, 1, 65531, 65537, 2, 65530, 65537, 2, 65529, 65537, 2, 65528, 65537, 2, 65527, 65537, 2, 65526, 1, 2, -10, 1, 1, -65546, 1, 0, -65539, 131073, 0, 65532, 65537, 2, 65533, 131073, 2, -262138, 1, 1, -196602, 1, 1, -131066, 1, 1, -65530, 1, 1, 6, 1, 1, 65542, 1, 1, -327674, 1, 0, -327673, 65537, 0, -327672, 65537, 0, -327671, 65537, 0, -327670, 65537, 0, -327669, 65537, 0, -327668, 131073, 0, -262132, 131073, 1, -196596, 131073, 1, -131060, 131073, 1, -65524, 131073, 1, 12, 131073, 1, 65548, 131073, 1, 131084, 131073, 1, 196620, 131073, 1, 262156, 131073, 1, 327692, 131073, 1, 327687, 65537, 2, 327688, 65537, 2, 327689, 65537, 2, 327690, 65537, 2, 327691, 65537, 2, 327686, 1, 2, 131078, 1, 1, 196614, 1, 1, 262150, 1, 1, -196601, 65537, 1, -131065, 65537, 1, -65529, 65537, 1, 7, 65537, 1, 65543, 65537, 1, 131079, 65537, 1, 196615, 65537, 1, -196600, 65537, 1, -131064, 65537, 1, -65528, 65537, 1, 8, 65537, 1, 65544, 65537, 1, 131080, 65537, 1, 196616, 65537, 1, -196599, 65537, 1, -131063, 65537, 1, -65527, 65537, 1, 9, 65537, 1, 65545, 65537, 1, 131081, 65537, 1, 196617, 65537, 1, -196598, 65537, 1, -131062, 65537, 1, -65526, 65537, 1, 10, 65537, 1, 65546, 65537, 1, 131082, 65537, 1, 196618, 65537, 1, -196597, 65537, 1, -131061, 65537, 1, -65525, 65537, 1, 11, 65537, 1, 65547, 65537, 1, 131083, 65537, 1, 196619, 65537, 1, 262151, 65537, 1, 262152, 65537, 1, 262153, 65537, 1, 262154, 65537, 1, 262155, 65537, 1, -262137, 65537, 1, -262136, 65537, 1, -262135, 65537, 1, -262134, 65537, 1, -262133, 65537, 1)
+layer_1/name = "Walls"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(-4, 131072, 0, -5, 65536, 0, -6, 65536, 0, -7, 65536, 0, -8, 65536, 0, -65530, 65536, 2, -131066, 0, 2, -196602, 0, 2, -262138, 0, 1, -65529, 65536, 0, -65528, 65536, 0, -65527, 131072, 1, 9, 0, 2, 65545, 0, 2, 131081, 0, 2, 196617, 0, 3, -9, 0, 0)
+
+[node name="Decoration" type="Sprite2D" parent="Ground"]
+modulate = Color(0.898039, 0.807843, 0.639216, 1)
+position = Vector2(809, 958)
+texture = ExtResource("5_b75wb")
+
+[node name="Moss2" type="Sprite2D" parent="Ground"]
+position = Vector2(3549, 10)
+texture = ExtResource("6_fds0u")
+
+[node name="Moss4" type="Sprite2D" parent="Ground"]
+position = Vector2(-573, 1133)
+texture = ExtResource("7_88fc2")
+
+[node name="Moss3" type="Sprite2D" parent="Ground"]
+position = Vector2(-526, 578)
+texture = ExtResource("6_fds0u")
+
+[node name="House" parent="Ground" instance=ExtResource("10_snho0")]
+position = Vector2(-1266, 3926)
+rotation = -2.06834
+
+[node name="SteamVent" parent="Ground" instance=ExtResource("9_8e5gr")]
+position = Vector2(-162, 731)
+
+[node name="Gate" parent="." instance=ExtResource("2_laxjt")]
+position = Vector2(432, -485)
+
+[node name="Player" parent="." instance=ExtResource("3_3i70v")]
+position = Vector2(508, 484)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.6, 0.6)
+position_smoothing_enabled = true
+
+[node name="Projectiles" type="Node2D" parent="."]
+
+[connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
+[connection signal="grenade_thrown" from="Player" to="." method="_on_player_grenade_thrown"]
+[connection signal="laser_fired" from="Player" to="." method="_on_player_laser_fired"]
