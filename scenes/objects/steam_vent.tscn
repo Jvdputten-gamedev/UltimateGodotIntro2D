@@ -35,3 +35,4 @@ texture = ExtResource("1_82se0")
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_x0swf")
 texture = ExtResource("2_n26oq")
+lifetime = 1.5
