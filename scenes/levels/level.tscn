@@ -18,7 +18,7 @@ metadata/_edit_lock_ = true
 zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
 
-[node name="CanvasLayer" parent="." instance=ExtResource("3_7g5hm")]
+[node name="UI" parent="." instance=ExtResource("3_7g5hm")]
 
 [connection signal="grenade_thrown" from="Player" to="." method="_on_player_grenade_thrown"]
 [connection signal="laser_fired" from="Player" to="." method="_on_player_laser_fired"]

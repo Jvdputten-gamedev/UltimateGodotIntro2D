@@ -11,7 +11,6 @@ signal grenade_thrown(pos, direction)
 
 
 
-
 func _process(_delta):
 
 	# Movement	
@@ -51,3 +50,5 @@ func _on_laser_timer_timeout():
 
 func _on_grenade_timer_timeout():
 	can_grenade = true
+
+
