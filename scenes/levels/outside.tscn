@@ -96,6 +96,9 @@ position = Vector2(-1400, 1056)
 rotation = -2.11503
 autoplay = "default"
 
+[node name="Player" parent="." index="2"]
+position = Vector2(642, 480)
+
 [node name="Gate" parent="." index="3" instance=ExtResource("2_kvdqs")]
 position = Vector2(660, -591)
 
