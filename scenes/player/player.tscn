@@ -8,7 +8,7 @@
 polygon = PackedVector2Array(6, -57, 28, -49, 35, -36, 48, -27, 61, -16, 76, -9, 90, -4, 107, 0, 122, 8, 120, 21, 118, 33, 106, 33, 97, 39, 86, 50, 72, 52, 54, 53, 46, 41, 27, 41, 10, 44, -10, 53, -22, 59, -38, 58, -47, 50, -60, 30, -68, 14, -72, -5, -69, -22, -66, -36, -55, -45, -34, -50, -23, -59, -7, -61)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ooepp"]
-radius = 74.0608
+radius = 58.5019
 
 [sub_resource type="Gradient" id="Gradient_ntm5p"]
 colors = PackedColorArray(0.0823529, 1, 1, 0.72549, 0.219608, 1, 1, 0.0941176)
@@ -29,7 +29,7 @@ scale_max = 0.8
 color = Color(0.0823529, 1, 1, 0.321569)
 color_ramp = SubResource("GradientTexture1D_4slgh")
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Entity"]]
 collision_mask = 31
 script = ExtResource("1_oyfda")
 
@@ -37,10 +37,11 @@ script = ExtResource("1_oyfda")
 occluder = SubResource("OccluderPolygon2D_nx473")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.499718, 2.50041)
 shape = SubResource("CircleShape2D_ooepp")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
-position = Vector2(26, 0)
+position = Vector2(26.5003, 1.50041)
 rotation = 1.5708
 texture = ExtResource("2_kkvv3")
 
@@ -51,6 +52,7 @@ wait_time = 0.5
 wait_time = 2.0
 
 [node name="LaserStartPositions" type="Node2D" parent="."]
+position = Vector2(5, 0)
 
 [node name="Marker2D" type="Marker2D" parent="LaserStartPositions"]
 position = Vector2(121, 19)

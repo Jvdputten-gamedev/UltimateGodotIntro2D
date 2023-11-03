@@ -9,7 +9,8 @@ var speed: int = max_speed
 signal laser_fired(pos, direction)
 signal grenade_thrown(pos, direction)
 
-
+func hit():
+	Globals.health -= 10
 
 func _process(_delta):
 

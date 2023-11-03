@@ -84,7 +84,10 @@ metadata/_edit_lock_ = true
 position = Vector2(3720, -1941)
 shape = SubResource("RectangleShape2D_5sky6")
 
-[node name="Player" parent="." index="6"]
+[node name="Item" parent="." index="7" instance=ExtResource("9_dn4fw")]
+position = Vector2(3271, -2323)
+
+[node name="Player" parent="." index="8"]
 position = Vector2(3481, -1948)
 metadata/_edit_group_ = true
 
@@ -92,8 +95,5 @@ metadata/_edit_group_ = true
 energy = 2.3
 texture = ExtResource("6_wb46j")
 texture_scale = 1.45
-
-[node name="Item" parent="." index="7" instance=ExtResource("9_dn4fw")]
-position = Vector2(3271, -2323)
 
 [connection signal="body_entered" from="ExitGateArea" to="." method="_on_exit_gate_area_body_entered"]
